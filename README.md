@@ -10,7 +10,7 @@ Computing this volume is a sampling problem, and it literally corresponds to fin
 
 Two remarks before we start:
 
-Often, one speaks of the "hypersphere in 200 dimensions", and we will also need the "hypercylinder". In this homework, we simply leave out the "hyper", and speak of "spheres" in d dimensions and "cylinders" in d dimensions. You will discover, among others, that the disk is a two-dimensional sphere, and that the square is a two-dimensional cylinder (see below). Of course there are precise mathematical definitions. In particular, we consider unit spheres and unit cylinders. In one dimension, normally, one speaks of a "length", in two dimensions, we have an "area", and in three dimensions, there are "volumes". In this homework, we speak of "volume" for all these measures. A "volume", in our definition, has no units (like cm^3) and, although it might sound strange to some of you, we may compare volumes across different dimensions.
+Often, one speaks of the "hypersphere in 200 dimensions", and we will also need the "   ". In this homework, we simply leave out the "hyper", and speak of "spheres" in d dimensions and "cylinders" in d dimensions. You will discover, among others, that the disk is a two-dimensional sphere, and that the square is a two-dimensional cylinder (see below). Of course there are precise mathematical definitions. In particular, we consider unit spheres and unit cylinders. In one dimension, normally, one speaks of a "length", in two dimensions, we have an "area", and in three dimensions, there are "volumes". In this homework, we speak of "volume" for all these measures. A "volume", in our definition, has no units (like cm^3) and, although it might sound strange to some of you, we may compare volumes across different dimensions.
 
 Some mathematical definitions, and some discussion:
 
@@ -38,7 +38,13 @@ A
 In this section, we interpret the table and the mathematical definitions of the introduction. We strongly suggest that you print out the definitions and the table or copy them onto paper, to have a vade mecum (cheat-sheet) for this entire homework session.
 A1
 
-Explain, using the mathematical definition given in the introduction, why the segment [-1, 1] represents a one-dimensional sphere, and why the square from -1 to 1 in x and from -1 to 1 in y is a unit cylinder in two dimensions (two sentences). Confirm and explain that the unit cylinder in two dimensions has twice the volume of the unit sphere in one dimension (two sentences). Explain (prove) why the above relations
+Explain, using the mathematical definition given in the introduction, why the segment [-1, 1] represents a one-dimensional sphere, and why the square from -1 to 1 in x and from -1 to 1 in y is a unit cylinder in two dimensions (two sentences).
+
+**Answer**: All points between (-1, 1) satisfy the equation (x_0^2 + .... + x_{d-1}^2) < 1 because at the boundary points it is equal to 1 and thus for all points between them is smaller than 1 (their coordinates are closer to 0). The same applies for the cylinder plus the fact that x_{d-1} = y is between (-1, 1).
+
+Confirm and explain that the unit cylinder in two dimensions has twice the volume of the unit sphere in one dimension (two sentences).
+
+Explain (prove) why the above relations
 
 V_cyl(2) = 2 V_sph(1)
 
@@ -48,9 +54,13 @@ are valid in arbitrary dimensions, that is, prove that
 
 V_cyl(d + 1) = 2 V_sh(d)
 
+**Answer**: The volume of the unit cylinder is equal to the volume of the unit sphere multiplied by its height which by definition is a segment of length 2 and thus the unit cylinder has twice the volume of a unit sphere in d-1 dimension.
+
 In the above table, the quantity Q(d) equals twice the sphere volume in d dimensions divided by the unit cylinder volume in d dimensions. Prove that Q(d) equals the ratio of the sphere volume in dimension (d) and the sphere volume in dimension (d-1), that is, prove that
 
 Q(d) = V_sph(d) / V_sph(d-1)
+
+**Answer**: Given Q(d) = 2 * V_sph(d) / V_cyl(d). As described above, V_cyl(d) = 2*V_sph(d-1). By replacing V_cyl(d) in the previous equation we get Q(d) = V_sph(d) / V_sph(d-1).
 
 NB: In the following, we will compute Q(d) by Markov-chain Monte Carlo sampling.
 A2
